@@ -12,4 +12,6 @@ export class ExperimentsComponent implements OnInit {
 
    ngOnInit() { }
 
+   testPlan: string[] =[];
+
 }

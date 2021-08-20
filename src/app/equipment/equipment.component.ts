@@ -21,8 +21,9 @@ export class EquipmentComponent implements OnInit {
    cargoMass: number = 0;
    maximumAllowedMass: number = 2000;
    maxItems: number = 10;
-   isItemDisabled: false;
-   closeToMax: false;
+   isItemDisabled: boolean = false;
+   closeToMax: boolean = false;
+   isDoubledUp: boolean = false;
 
    constructor() { }
 
@@ -39,5 +40,21 @@ export class EquipmentComponent implements OnInit {
      }
 
    }
+
+   doubledUp(equipment){
+    let count=0;
+
+    for(let i=0;i<this.cargoHold.length;i++){
+      if (this.cargoHold[i]["name"]===equipment["name"]){
+        count+=1;
+      }
+    }
+    if (count>=2){
+      return true;
+    } else{
+      return false;
+    }
+       
+  }
    
 }
